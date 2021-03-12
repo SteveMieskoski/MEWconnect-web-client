@@ -217,6 +217,9 @@ export default {
     this.ethereum.on('accountsChanged', accounts => {
       console.log(`accountsChanged User's address is ${accounts[0]}`);
     });
+    this.ethereum.on('disconnect', () => {
+      this.userAddress = '';
+    });
 
     this.altPopup = new PopUpCreator();
   },
