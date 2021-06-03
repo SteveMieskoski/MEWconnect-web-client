@@ -16,6 +16,10 @@
       </li>
       <li>
         <hr/>
+        <button @click="closeDataChannel">Close Data Channel</button>
+      </li>
+      <li>
+        <hr/>
         <h2>Send</h2>
         <label for="toAmount">
           to amount
@@ -224,6 +228,9 @@ export default {
     this.altPopup = new PopUpCreator();
   },
   methods: {
+    closeDataChannel(){
+      this.connect.closeDataChannelForDemo();
+    },
     animate() {
       this.connect.showNotice();
     },
